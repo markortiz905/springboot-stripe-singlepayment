@@ -1,7 +1,6 @@
 package com.stripe.poc.prismstripesplitpayments.service;
 
 import com.stripe.Stripe;
-import com.stripe.exception.ApiException;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Charge;
 import com.stripe.net.RequestOptions;
@@ -42,7 +41,6 @@ public class StripeService {
         Charge charge = Charge.create(cParam, options);
 
         log.info(Charge.retrieve(charge.getId()).getPaid().toString());
-        throw new ApiException("test", "test", "test", 1, new Exception());
-        //return charge;
+        return charge;
     }
 }
